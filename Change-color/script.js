@@ -15,6 +15,8 @@ function changeColor() {
     //creates a string with rgb and rgb values for R,G,B
     //const rgb = "rgb(" + generateColor() + "," + generateColor() + "," + generateColor() + ")";
     //bodyElement.style.backgroundColor = rgb;
+
+    //second method with generated hex color 
     let hexNumbers = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
     let hexColor = '#';
 
