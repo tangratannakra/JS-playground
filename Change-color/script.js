@@ -11,6 +11,7 @@ function generateColor(){
 }
 
 function changeColor() {
+    //first method with generated RGB
     //on click change color or bodyElement
     //creates a string with rgb and rgb values for R,G,B
     //const rgb = "rgb(" + generateColor() + "," + generateColor() + "," + generateColor() + ")";
