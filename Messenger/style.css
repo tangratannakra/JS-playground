@@ -1,0 +1,55 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkolivegreen;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    margin:30px;
+    padding:20px;
+    background-color: white;
+    min-width:300px;
+    width: 80vw;
+    min-height:20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h4 {
+    text-align: center;
+    margin-bottom:20px;
+}
+
+input.input {
+    padding:10px;
+    margin-bottom:20px;
+}
+
+input.input value {
+    color:grey;
+}
+
+button.sendBtn {
+    padding:10px;
+    background-color: darkorange;
+    border:0px;
+    margin-bottom:20px;
+}
+
+button.sendBtn:hover {
+    background-color: chocolate;
+}
+
+.history {
+
+}
+
+.history h3 {
+    color: darkslategray;
+}
