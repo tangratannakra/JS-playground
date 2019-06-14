@@ -10,14 +10,21 @@ chatElement.timeStamp = new Date().toLocaleTimeString();
 function whenClicked() {
     const li = document.createElement('li');
     const deleteBtn = document.createElement('button');
+    deleteBtn.innerHTML = 'delete';
 
-    chatElement.messege = inputField.value;
-    chatHistory.push(chatElement);
-    li.appendChild(document.createTextNode(chatElement.timeStamp + " - " + chatElement.messege));
-    display.appendChild(li);
-    inputField.value= ''; //clear the input field for the next messege;
-    console.log(deleteBtn);
-
+    if (inputField.value == null || inputField.value == '') {
+      //do nothing, empty field
+    }
+    else {
+      chatElement.messege = inputField.value;
+      chatHistory.push(chatElement);
+      li.appendChild(document.createTextNode(chatElement.timeStamp + " - " + chatElement.messege + ' '));
+      li.appendChild(deleteBtn);
+      
+      display.appendChild(li);
+      inputField.value= ''; //clear the input field for the next messege;
+      console.log(deleteBtn);
+    }
 }
 
 //when "press to send" is pressed messege is added to history and displayed to the screen
