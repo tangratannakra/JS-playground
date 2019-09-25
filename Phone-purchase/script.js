@@ -1,5 +1,6 @@
 const bankLimit = document.querySelector('.bank-limit');
 const telPrice = document.querySelector('.tel-price');
+const clear = document.querySelector('.clear');
 
 const calculateBtn = document.querySelector('.calculateBtn');
 const totalPriceDisplay = document.querySelector('.total-price');
@@ -26,3 +27,13 @@ function calculatePrice(){
     totalPriceDisplay.innerHTML = totalPrice - telPriceValue;
     totalAmountDisplay.innerHTML = (totalPrice - telPriceValue)  / telPriceValue;
 }
+
+clear.addEventListener('click', (e) => {
+    document.querySelector('form').reset(e);
+    totalPriceDisplay.innerHTML = '';
+    totalAmountDisplay.innerHTML = '';
+}
+)
+    
+    
+
