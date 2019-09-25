@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="/Phone-purchase/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap" rel="stylesheet">
+    <title>Calculating bulk phone buy</title>
 </head>
+
 <body>
-    <h1>Phone purchase calculator</h1>
-    <form action="">
-        <input class="bank-limit" type="text" name="bank_limit"><label for="bank_limit" value="">Amount Limit</label>
-        <input class="tel-price" type="text" name="tel_price"><label for="tel_price" value="">Telephone Price</label>
-        <button class="calculateBtn" type="text">Callculate</button>
-    </form>
-    <div class="total-price">Total price</div>
-    <div class="total-amount">Amount</div>
+
+    <div class="wrapper">
+        <h1>Phone calculator</h1>
+        <form action="">
+            <div class="form-line">
+                <label for="bank_limit" value="">Bank Account Limit</label>
+                <input class="bank-limit" type="text" name="bank_limit" placeholder="Limit">
+
+            </div>
+            <div class="form-line ">
+                <label for="tel_price" value="">Telephone Price</label>
+                <input class="tel-price" type="text" name="tel_price" placeholder="Price of telephone">
+
+            </div>
+            <div class="form-line ">
+                <button class="calculateBtn" type="text">Calculate</button>
+            </div>
+            <div class="form-line"><div class="clear">Clear Form</div></div>
+        </form>
+        <div class="data-container">
+            <h2>Total Price of Phones:<span class="total-price"></span></h2>
+            <h2>Amount of Phones:<span class="total-amount"></span></h2>
+        </div>
+    </div>
+
     <script src="/Phone-purchase/script.js"></script>
 </body>
+
 </html>
