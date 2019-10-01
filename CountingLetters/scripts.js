@@ -33,10 +33,16 @@ function countLetters() {
 
 
      for (let i = 0; i < sortString.length; i++){
-        if (sortString[i] == sortString[i+1]){
+        //counting the repetition in the ordered array
+        //comparing with the next element, if they are the same
+        //count will be incremented 
+        if (sortString[i] === sortString[i+1]){
             count = count + 1;
         }
         else {
+            //when i+1 element is different, an array object is created
+            //and pushed into the result
+            //count is set back to 1
             let countedLetters = `${count}${sortString[i]}`;
             resultArray = [...resultArray, countedLetters];
             result = resultArray.join(', ');
