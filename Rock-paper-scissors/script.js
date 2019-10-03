@@ -12,20 +12,18 @@ let result = input.forEach(button => {
 function userClick() {
     let userChoice = this.id;
     let computerChoice = computerRandom(1, 4);
-    console.log(computerChoice);
 
-    if (userChoice == computerChoice) {
-        resultDisplay.innerHTML = `Computer chose "${computerChoice }", you both win!`;
+    if (userChoice === computerChoice) {
+        resultDisplay.innerHTML = `You chose "${userChoice}", Computer chose "${computerChoice }", you both win!`;
         body.className = 'mangoPulp';
     } else {
-        if ((computerChoice == 'rock' && userChoice == 'paper') ||
-            (computerChoice == 'scissors' && userChoice == 'rock') ||
-            (computerChoice == 'paper' && userChoice == 'scissors')) {
-            resultDisplay.innerHTML = `Computer chose "${computerChoice }", YOU win!`;
+        if ((computerChoice === 'rock' && userChoice === 'paper') ||
+            (computerChoice === 'scissors' && userChoice === 'rock') ||
+            (computerChoice === 'paper' && userChoice === 'scissors')) {
+            resultDisplay.innerHTML = `You chose "${userChoice}", Computer chose "${computerChoice }", YOU win!`;
             body.className = 'seaWeed';
         } else {
-            //bug is detected. when user select scissors, it always outputs you lost
-            resultDisplay.innerHTML = `Computer chose "${computerChoice }", YOU lost :( !`
+            resultDisplay.innerHTML = `You chose "${userChoice}", Computer chose "${computerChoice }", YOU lost :( !`
             body.className = 'cherry';
         }
     }
