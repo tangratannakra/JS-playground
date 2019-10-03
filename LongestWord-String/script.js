@@ -1,6 +1,6 @@
 let testString = "Hello, this is my test text";
 
-function findLongestWord(testString){
+function findLongestWord(testString) {
     //removing special char from text
     testString = testString.replace(/[^a-zA-Z ]/g, "");
 
@@ -8,14 +8,14 @@ function findLongestWord(testString){
     let longestString = 0;
     let longestWord = null;
 
-    splitString.forEach( singleWord => {
+    splitString.forEach(singleWord => {
         if (longestString < splitString.length) {
             longestString = splitString.length;
             longestWord = singleWord;
         }
     });
-        console.log(longestWord);
-        return longestWord;  
+    console.log(longestWord);
+    return longestWord;
 }
 
-findLongestWord(testString); 
+findLongestWord(testString);
