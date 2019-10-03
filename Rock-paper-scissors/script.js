@@ -3,6 +3,7 @@
 //const scissorBtn = document.querySelector("#scissor");
 const input = document.querySelectorAll("input");
 const resultDisplay = document.querySelector("#result");
+const body = document.querySelector('body');
 
 let result = input.forEach(button => {
     button.onclick = userClick;
@@ -11,18 +12,24 @@ let result = input.forEach(button => {
 function userClick() {
     let userChoice = this.id;
     let computerChoice = computerRandom(1, 4);
+    console.log(computerChoice);
 
-    if (userChoice === computerChoice) {
-        resultDisplay.innerHTML = `Computer chose "${computerChoice }", you both win!`
+    if (userChoice == computerChoice) {
+        resultDisplay.innerHTML = `Computer chose "${computerChoice }", you both win!`;
+        body.className = 'mangoPulp';
     } else {
         if ((computerChoice == 'rock' && userChoice == 'paper') ||
             (computerChoice == 'scissors' && userChoice == 'rock') ||
             (computerChoice == 'paper' && userChoice == 'scissors')) {
-            resultDisplay.innerHTML = `Computer chose "${computerChoice }", YOU win!`
+            resultDisplay.innerHTML = `Computer chose "${computerChoice }", YOU win!`;
+            body.className = 'seaWeed';
         } else {
+            //bug is detected. when user select scissors, it always outputs you lost
             resultDisplay.innerHTML = `Computer chose "${computerChoice }", YOU lost :( !`
+            body.className = 'cherry';
         }
     }
+
 };
 
 
