@@ -40,6 +40,24 @@ input:last-child {
     word-spacing: 0.4rem; */
 }
 
+.counting-result {
+    display: flex;
+    margin-top: 50px;
+}
+
+.start-over {
+    font-weight: 800;
+    padding: 20px;
+    margin-top: 50px;
+    cursor: pointer;
+    background-color: none;
+}
+
+.start-over:hover {
+    background-color: 'black';
+}
+
+
 .center {
     display: flex;
     flex-direction: column;
