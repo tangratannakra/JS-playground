@@ -1,20 +1,15 @@
 function rgb(r, g, b) {
-    let integerArray = [r, g, b];
-    let rgbCode = '';
-    let hexX = '';
     let hex = '';
 
-    integerArray.forEach(element => {
-        rgbCode = testBorders(element);
-        rgbCode < 16 ? hexX = '0' + rgbCode.toString(16) : hexX = rgbCode.toString(16);
-        hex = hex + hexX;
+    [r, g, b].forEach(element => {
+        hex = hex + testBorders(element).toString(16);
     })
 
-    function testBorders(rgbCode) {
-        rgbCode > 255 ? rgbCode = 255 : rgbCode;
-        rgbCode < 0 ? rgbCode = 0 : rgbCode;
-
-        return rgbCode;
+    function testBorders(num) {
+        num > 255 ? num = "ff" : num;
+        num < 0 ? num = "00" : num;
+        num < 16 ? num = '0' + num.toString(16) : num;
+        return num;
     }
 
     return hex.toUpperCase();
