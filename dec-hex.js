@@ -6,8 +6,8 @@ function rgb(r, g, b) {
     })
 
     function testBorders(num) {
-        num > 255 ? num = "ff" : num;
-        num < 0 ? num = "00" : num;
+        num > 255 ? num = 255 : num;
+        num <= 0 ? num = 0 : num;
         num < 16 ? num = '0' + num.toString(16) : num;
         return num;
     }
@@ -15,7 +15,7 @@ function rgb(r, g, b) {
     return hex.toUpperCase();
 }
 
-console.log(rgb(78, 206, 19))
+console.log(rgb(0, 0, 0))
 
 //From Codewars
 
