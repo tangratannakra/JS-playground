@@ -4,5 +4,7 @@
 			"path": "D:\\TEST-PROJECTS\\JS-projects"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "control-assignment-problem"
+	}
 }
