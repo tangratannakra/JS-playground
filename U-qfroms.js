@@ -12,8 +12,56 @@
 //     q.remove(); // returns 1
 //     q.remove(); // returns 2
 
-const Stack = require('./stack');
+class Stack {
+    constructor(...data) {
+        this.sData = [...data];
+    }
 
-class Queue {}
+    push(el) {
+        this.sData.push(el);
+    }
+    pop() {
+        return this.sData.pop();
+    }
 
-module.exports = Queue;
+    peek() {
+        return this.sData[this.sData.length - 1];
+    }
+}
+
+class Queue {
+    constructor() {
+        this.s1 = new Stack();
+        this.s2 = new Stack();
+    }
+
+    add(el) {
+        this.s1.push(el);
+    }
+
+    remove() {
+        while (this.s1.peek()) {
+            this.s2.push(this.s1.pop());
+        }
+
+        const el = this.s2.pop(); // pop one element then look inside stack 2
+        while (this.s2.peek()) {
+            this.s1.push(this.s2.pop());
+        }
+
+        return el;
+    };
+
+    peek() {
+        while (this.s1.peek()) {
+            this.s2.push(this.s1.pop());
+        }
+
+        const el = this.s2.peek(); // pop one element then look inside stack 2
+        while (this.s2.peek()) {
+            this.s1.push(this.s2.pop());
+        }
+
+        return el;
+    };
+}
