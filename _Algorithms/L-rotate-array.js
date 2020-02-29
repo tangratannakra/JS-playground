@@ -1,5 +1,4 @@
 var rotate = function (nums, k) {
-
     let i = 0;
     while (i < k) {
         nums.unshift(nums.pop())
