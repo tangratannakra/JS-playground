@@ -13,30 +13,32 @@
 // Three groups will be formed: 2, 3, 4, 5, 6, 8, 9, 10
 
 function friendsGroups(n) {
-    let groupsFriends = {};
-    let noFriends = [];
+    let users = {};
+    let mutual = [];
+    let single = [];
 
     for (let user = 2; user <= (n + 1); user++) {
         let friends = []
         for (let i = 2; i <= (n + 1); i++) {
-            if ((i % user === 0 || user % i === 0) && user !== i) {
-                friends.push(i)
-                groupsFriends[user] = friends;
-
-            } else if (i % user === 0) {
-                noFriends.push(user)
+            if (user !== i) {
+                if ((user % i === 0) || i % user === 0) {
+                    friends.push(i);
+                }
             }
+            users[user] = friends;
         }
     }
 
-    return `${Object.keys(groupsFriends)} & ${noFriends.filter(element => {
-        if( !(element in groupsFriends)){
-            return element;
+    for (let user in users) {
+        if (users[user] != 0) {
+            mutual.push(user)
+        } else {
+            single.push(user)
         }
-    })}`;
+
+    }
+    //return `${mutual.toString()} \n ${single.toString()} ` ==== stipud, just return the number of groups!!!! I am so kind to myself :D
+
+    return mutual.length === 0 ? single.length : 1 + single.length; // AND HERE YOU ARE! THANK YOU! 
 }
-
-
-//Note it outputs the clusters devided it 2 grups - with friends and no friends
-//need to work on the expressions and result output
-console.log(friendsGroups(10))
+console.log(friendsGroups(5))
