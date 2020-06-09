@@ -12,7 +12,6 @@ function reverseWords(string) {
 
     }
     return output.toString()
-
 }
 
 console.log(reverseWords("the sky is blue"))
